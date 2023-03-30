@@ -1,39 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+:root {
+  --body-background: #a1c3ff;
+  --nav-background: #3474e6;
+  --header-background: #0151cc;
+  --text-dark: #333;
+  --text-light: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  background: var(--body-background);
 }
 
-.flex-container {
-  display: flex;
-  background-color: red;
+h1,
+h2 {
+  margin-bottom: 1.5rem;
 }
 
-.item {
-  /* grow shrink basis */
-  /* the shorthand is flex: 1 */
-  flex: 1 0 100px;
-  height: 100px;
-  background: #254de4;
-  margin: 10px;
-  color: #fff;
+.navbar {
+  background: var(--nav-background);
+  color: var(--text-light);
+  height: 6rem;
+}
+
+.navbar .logo {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.navbar .container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.item:nth-of-type(1) {
-  flex-shrink: 1;
+ul {
+  display: flex;
+  list-style-type: none;
 }
 
-.item:nth-of-type(2) {
-  flex-shrink: 2;
+.navbar a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-left: 1rem;
 }
 
-.item:nth-of-type(3) {
-  flex-shrink: 3;
+.navbar a:hover {
+  color: lightblue;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3em;
+}
+
+.header {
+  background-color: var(--header-background);
+  color: var(--text-light);
+  min-height: 400px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.header img {
+  max-width: 400px;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.boxes .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  flex: 1;
+  background: var(--header-background);
+  color: var(--text-light);
+  border-radius: 1rem;
+  margin: 2em 1em;
+  padding: 1.5em 2em;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.box i {
+  margin-right: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2em;
+  }
+
+  .boxes .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .box {
+    margin: 1.5em;
+  }
 }
